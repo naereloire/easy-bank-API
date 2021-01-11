@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "titular")
-public class TitularModels {
+public class TitularModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -18,7 +18,7 @@ public class TitularModels {
     private String titularName;
 
     @Column(name = "tipo_cadastral", nullable = false)
-    private String cadastralType;
+    private Long cadastralType;
 
     @Column(name = "email", nullable = false)
     private String email;
@@ -42,11 +42,11 @@ public class TitularModels {
         this.titularName = titularName;
     }
 
-    public String getCadastralType() {
+    public Long getCadastralType() {
         return cadastralType;
     }
 
-    public void setCadastralType(String cadastralType) {
+    public void setCadastralType(Long cadastralType) {
         this.cadastralType = cadastralType;
     }
 

@@ -1,6 +1,7 @@
 package br.com.easybank.easybank.repositories;
+import br.com.easybank.easybank.models.TitularModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public class TitularRepository {
-    public interface TitularModels extends JpaRepository<TitularModels, Long> {}
+public interface TitularRepository extends JpaRepository<TitularModel, Long> {
 }
+
