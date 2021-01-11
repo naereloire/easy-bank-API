@@ -7,12 +7,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EntityScan(basePackages = {"br.com.easybank"})
-@EnableJpaRepositories(basePackages = {"br.com.easybank"})
+@EnableJpaRepositories(basePackages = {"br.com.easybank.repositories"})
+@EntityScan(basePackages = {"br.com.easybank.models"})
 @ComponentScan(basePackages = {"br.com.easybank"})
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 }
-

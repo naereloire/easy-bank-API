@@ -18,7 +18,7 @@ public class AccountModel {
 
     @OneToOne
     @JoinColumn(name = "titular_id", referencedColumnName = "id")
-    private TitularModel titular;
+    private TitularModel titularId;
 
     @Column(name = "agencia", nullable = false)
     private Long agencia;
@@ -28,4 +28,45 @@ public class AccountModel {
 
     @Column(name = "saldo", nullable = false)
     private double saldo;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public TitularModel getTitularId() {
+        return titularId;
+    }
+
+    public void setTitularId(TitularModel titular) {
+        this.titularId = titular;
+    }
+
+    public Long getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(Long agencia) {
+        this.agencia = agencia;
+    }
+
+    public Long getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Long numero) {
+        this.numero = numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 }

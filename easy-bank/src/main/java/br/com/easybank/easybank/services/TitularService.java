@@ -10,11 +10,13 @@ public class TitularService {
     private TitularRepository titularRepository;
 
     public TitularService(TitularRepository titularRepository) {
+
         this.titularRepository = titularRepository;
     }
 
-    public TitularModel saveTitular(TitularModel listOfTitular) {
-        return titularRepository.save(listOfTitular);
+    public TitularModel saveTitular(TitularModel titular) {
+
+        return titularRepository.save(titular);
     }
 
     public List<TitularModel> findAllTitulars() {
@@ -25,6 +27,17 @@ public class TitularService {
     public Optional<TitularModel> findTitularById(Long id) {
 
         return titularRepository.findById(id);
+    }
+
+    public TitularModel findByCadastralType(Long cadastralType) {
+        Optional<TitularModel> titularFounded = titularRepository.
+                findByCadastralType(cadastralType);
+        if (titularFounded.isPresent()) {
+            TitularModel wanted = titularFounded.get();
+            return wanted;
+        } else {
+            return null;
+        }
     }
 
     public TitularModel updateTitular(Long id, TitularModel titularModel) {
