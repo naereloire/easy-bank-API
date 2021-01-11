@@ -1,7 +1,6 @@
 package br.com.easybank.easybank.controllers;
 
 import br.com.easybank.easybank.models.AccountModel;
-import br.com.easybank.easybank.models.TitularModel;
 import br.com.easybank.easybank.services.AccountService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/api/account")
 public class AccountController {
     private AccountService accountService;
 
@@ -24,7 +23,7 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @RequestMapping(value = "/easybank", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
+    @RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
     @ResponseBody
     public AccountModel createAccount(@RequestBody AccountModel accountModel) {
         return accountService.saveAccount(accountModel);
@@ -45,8 +44,8 @@ public class AccountController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
-    public ResponseEntity getTitularId(@PathVariable("id") Long id) {
+    @RequestMapping(value = "/id/{titular_id}", method = RequestMethod.GET)
+    public ResponseEntity getTitularId(@PathVariable("titular_id") Long id) {
 
         AccountModel titularFounded = accountService.findAccountByTitularId(id);
         if (titularFounded != null) {

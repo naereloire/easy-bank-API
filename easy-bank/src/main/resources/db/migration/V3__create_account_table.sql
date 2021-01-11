@@ -4,6 +4,6 @@ create TABLE IF NOT EXISTS migrations.conta (
     agencia INT2 NOT NULL,
     numero INT2 NOT NULL,
     saldo INT2 NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
     FOREIGN KEY(titular_id) REFERENCES titular(id)
 );

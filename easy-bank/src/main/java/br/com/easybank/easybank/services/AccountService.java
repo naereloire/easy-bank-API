@@ -2,16 +2,19 @@ package br.com.easybank.easybank.services;
 
 import br.com.easybank.easybank.models.AccountModel;
 import br.com.easybank.easybank.repositories.AccountRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AccountService {
-    AccountRepository accountRepository;
+    private AccountRepository accountRepository;
 
     public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
+
 
     public AccountModel saveAccount(AccountModel account) {
 

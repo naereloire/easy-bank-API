@@ -2,10 +2,12 @@ package br.com.easybank.easybank.services;
 
 import br.com.easybank.easybank.models.TitularModel;
 import br.com.easybank.easybank.repositories.TitularRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TitularService {
     private TitularRepository titularRepository;
 

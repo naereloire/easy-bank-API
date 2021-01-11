@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/api/titular")
 public class TitularController {
 
     private TitularService titularService;
@@ -23,7 +23,7 @@ public class TitularController {
         this.titularService = titularService;
     }
 
-    @RequestMapping(value = "/easybank", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
+    @RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
     @ResponseBody
     public TitularModel createTitular(@RequestBody TitularModel titularModel) {
 
@@ -45,10 +45,10 @@ public class TitularController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
-    public ResponseEntity getByCpf(@PathVariable("id") Long id) {
+    @RequestMapping(value = "/cpf/{cpf}", method = RequestMethod.GET)
+    public ResponseEntity getByCpf(@PathVariable("cpf") Long cpf) {
 
-        TitularModel titularFounded = titularService.findByCadastralType(id);
+        TitularModel titularFounded = titularService.findByCadastralType(cpf);
         if (titularFounded != null) {
             return ResponseEntity.ok().body(titularFounded);
         } else {
