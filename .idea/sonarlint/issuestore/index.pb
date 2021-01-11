@@ -1,3 +1,19 @@
 
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+o
+?src/main/java/br/com/easybank/easybank/EasyBankApplication.java,5/3/537ec2975abb22d845e5eabeda9ec14e4efaf340
+z
+Jsrc/main/java/br/com/easybank/easybank/repositories/AccountRepository.java,0/a/0ac7c7e28807eb7517b33fc698e5f9e9903aca53
+z
+Jsrc/main/java/br/com/easybank/easybank/repositories/TitularRepository.java,b/2/b28ea65e0f2771dee1f011ae1513d2f2221c57e6
+s
+Csrc/main/java/br/com/easybank/easybank/services/TitularService.java,1/9/19c0d5bb9f35b7274aa4c835fada399b09851726
+g
+7src/main/java/br/com/easybank/easybank/Application.java,9/2/923c330abbe235af620ca1c3f4459c52f26f55c2
+s
+Csrc/main/java/br/com/easybank/easybank/services/AccountService.java,d/3/d3d31195700726721a103d9851b8c57475a017f0
+o
+?src/main/java/br/com/easybank/easybank/models/AccountModel.java,3/8/3811b0d24009d9ed3dee2f0bb5f3b8372b959378
+o
+?src/main/java/br/com/easybank/easybank/models/TitularModel.java,0/b/0b0c4acb49bbab478183d5d99f6c0f1598d0c55e
