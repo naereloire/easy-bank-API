@@ -44,8 +44,8 @@ public class AccountController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @RequestMapping(value = "/id/{titular_id}", method = RequestMethod.GET)
-    public ResponseEntity getTitularId(@PathVariable("titular_id") Long id) {
+    @RequestMapping(value = "/titular_id/{id}", method = RequestMethod.GET)
+    public ResponseEntity getTitularId(@PathVariable("id") Long id) {
 
         AccountModel titularFounded = accountService.findAccountByTitularId(id);
         if (titularFounded != null) {
