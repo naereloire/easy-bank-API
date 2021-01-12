@@ -45,7 +45,7 @@ public class AccountService {
         Optional<AccountModel> accountFounded = accountRepository.findById(id);
         if (accountFounded.isPresent()) {
             AccountModel record = accountFounded.get();
-            record.setSaldo(accountModel.getSaldo());
+            record.setBalance(accountModel.getBalance());
             AccountModel updated = accountRepository.save(record);
             return updated;
         } else {
@@ -66,13 +66,13 @@ public class AccountService {
     public AccountModel transferMoneyBetweenAccounts(Long titularIdOrigin, Long titularIdDestiny, Double quantityToTransfer) {
         AccountModel accountOrigin = this.findAccountByTitularId(titularIdOrigin);
         AccountModel destinyAccount = this.findAccountByTitularId(titularIdDestiny);
-        Double accountOriginbalance = accountOrigin.getSaldo();
+        Double accountOriginbalance = accountOrigin.getBalance();
 
         if (accountOriginbalance >= quantityToTransfer) {
-            accountOrigin.setSaldo(accountOriginbalance - quantityToTransfer);
+            accountOrigin.setBalance(accountOriginbalance - quantityToTransfer);
             accountOrigin = this.updateAccount(accountOrigin.getId(), accountOrigin);
 
-            destinyAccount.setSaldo(destinyAccount.getSaldo() + quantityToTransfer);
+            destinyAccount.setBalance(destinyAccount.getBalance() + quantityToTransfer);
             destinyAccount = this.updateAccount(destinyAccount.getId(), destinyAccount);
 
             return accountOrigin;

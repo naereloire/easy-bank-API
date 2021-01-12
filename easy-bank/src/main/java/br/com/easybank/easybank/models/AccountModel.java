@@ -13,22 +13,21 @@ import javax.persistence.Table;
 @Table(name = "conta")
 public class AccountModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne
     @JoinColumn(name = "titular_id", referencedColumnName = "id")
     private TitularModel titularId;
 
-    @Column(name = "agencia", nullable = false)
-    private Long agencia;
+    @Column(name = "agency", nullable = false)
+    private Long agency;
 
-    @Column(name = "numero", nullable = false)
-    private Long numero;
+    @Column(name = "account_number", nullable = false)
+    private Long accountNumber;
 
-    @Column(name = "saldo", nullable = false)
-    private double saldo;
-
+    @Column(name = "balance", nullable = false)
+    private double balance;
 
     public Long getId() {
         return id;
@@ -42,31 +41,32 @@ public class AccountModel {
         return titularId;
     }
 
-    public void setTitularId(TitularModel titular) {
-        this.titularId = titular;
+    public void setTitularId(TitularModel titularId) {
+        this.titularId = titularId;
     }
 
-    public Long getAgencia() {
-        return agencia;
+    public Long getAgency() {
+        return agency;
     }
 
-    public void setAgencia(Long agencia) {
-        this.agencia = agencia;
+    public void setAgency(Long agency) {
+        this.agency = agency;
     }
 
-    public Long getNumero() {
-        return numero;
+    public Long getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setNumero(Long numero) {
-        this.numero = numero;
+    public void setAccountNumber(Long accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
-    public double getSaldo() {
-        return saldo;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
+
 }

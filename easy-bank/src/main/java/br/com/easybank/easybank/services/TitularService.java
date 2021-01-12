@@ -47,7 +47,7 @@ public class TitularService {
         Optional<TitularModel> titularFounded = titularRepository.findById(id);
         if (titularFounded.isPresent()) {
             TitularModel record = titularFounded.get();
-            record.setTitularName(titularModel.getTitularName());
+            record.setName(titularModel.getName());
             record.setEmail(titularModel.getEmail());
             record.setPhone(titularModel.getPhone());
             TitularModel updated = titularRepository.save(record);

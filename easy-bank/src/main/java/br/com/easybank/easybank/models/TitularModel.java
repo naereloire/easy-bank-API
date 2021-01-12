@@ -11,19 +11,19 @@ import javax.persistence.Table;
 @Table(name = "titular")
 public class TitularModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name", nullable = false)
-    private String titularName;
+    private String name;
 
-    @Column(name = "tipo_cadastral", nullable = false)
+    @Column(name = "cadastral_type", nullable = false)
     private Long cadastralType;
 
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "telefone", nullable = false)
+    @Column(name = "phone", nullable = false)
     private Integer phone;
 
     public Long getId() {
@@ -34,12 +34,12 @@ public class TitularModel {
         this.id = id;
     }
 
-    public String getTitularName() {
-        return titularName;
+    public String getName() {
+        return name;
     }
 
-    public void setTitularName(String titularName) {
-        this.titularName = titularName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getCadastralType() {
