@@ -4,16 +4,18 @@ import br.com.easybank.easybank.models.TitularModel;
 import br.com.easybank.easybank.services.TitularService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/api/titular")
 public class TitularController {
 
@@ -23,6 +25,7 @@ public class TitularController {
         this.titularService = titularService;
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
     @ResponseBody
     public TitularModel createTitular(@RequestBody TitularModel titularModel) {
