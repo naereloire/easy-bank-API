@@ -46,7 +46,7 @@ public class AccountController {
         if (titularFounded != null) {
             return ResponseEntity.ok().body(titularFounded);
         } else {
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.notFound().build();           
         }
 
     }
