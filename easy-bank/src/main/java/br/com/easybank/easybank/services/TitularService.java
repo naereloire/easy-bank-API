@@ -32,7 +32,8 @@ public class TitularService {
     }
 
     public TitularModel findTitularByEmailAndPassword(String email, String password) {
-        Optional<TitularModel> titularFounded = titularRepository.findByEmailAndPassword(email, password);
+        Optional<TitularModel> titularFounded = titularRepository.
+                findByEmailAndPassword(email, password);
         if (titularFounded.isPresent()) {
             TitularModel wanted = titularFounded.get();
             return wanted;

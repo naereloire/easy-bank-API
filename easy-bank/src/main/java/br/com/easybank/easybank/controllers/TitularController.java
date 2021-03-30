@@ -3,7 +3,6 @@ package br.com.easybank.easybank.controllers;
 import br.com.easybank.easybank.models.TitularModel;
 import br.com.easybank.easybank.services.TitularService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,9 +35,15 @@ public class TitularController {
     @CrossOrigin
     @RequestMapping(value = "/loggeduser", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
     @ResponseBody
-    public TitularModel getByEmailAndPassword (@RequestBody TitularModel titularModel) {
+    public ResponseEntity getByEmailAndPassword (@RequestBody TitularModel titularModel) {
+      TitularModel  loggedUserFounded = titularService.findTitularByEmailAndPassword(titularModel.getEmail(),
+              titularModel.getPassword());
+        if (loggedUserFounded != null) {
+            return ResponseEntity.ok().body(loggedUserFounded);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
 
-        return titularService.findTitularByEmailAndPassword(titularModel.getEmail(),titularModel.getPassword());
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
