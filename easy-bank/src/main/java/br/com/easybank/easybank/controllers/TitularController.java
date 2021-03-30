@@ -33,6 +33,14 @@ public class TitularController {
         return titularService.saveTitular(titularModel);
     }
 
+    @CrossOrigin
+    @RequestMapping(value = "/loggeduser", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    public TitularModel getByEmailAndPassword (@RequestBody TitularModel titularModel) {
+
+        return titularService.findTitularByEmailAndPassword(titularModel.getEmail(),titularModel.getPassword());
+    }
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
     public List<TitularModel> getAll() {
@@ -58,6 +66,7 @@ public class TitularController {
             return ResponseEntity.notFound().build();
         }
     }
+
 
     @PutMapping(value = "/id/{id}")
     public ResponseEntity update(@PathVariable("id") Long id, @RequestBody TitularModel titularModel) {

@@ -7,5 +7,6 @@ import java.util.Optional;
 
 public interface TitularRepository extends JpaRepository<TitularModel, Long> {
     Optional<TitularModel> findByCadastralType(Long cadastralType);
+    Optional<TitularModel> findByEmailAndPassword(String email, String password);
 }
 

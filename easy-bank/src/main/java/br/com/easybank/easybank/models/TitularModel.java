@@ -20,8 +20,14 @@ public class TitularModel {
     @Column(name = "cadastral_type", nullable = false)
     private Long cadastralType;
 
+    @Column(name = "cadastral_situation", nullable = false)
+    private String cadastralSituation;
+
     @Column(name = "email", nullable = false)
     private String email;
+
+    @Column(name = "password", nullable = false)
+    private String password;
 
     @Column(name = "phone", nullable = false)
     private Integer phone;
@@ -65,4 +71,22 @@ public class TitularModel {
     public void setPhone(Integer phone) {
         this.phone = phone;
     }
+
+
+    public String getCadastralSituation() {
+        return cadastralSituation;
+    }
+
+    public void setCadastralSituation(String cadastralSituation) {
+        this.cadastralSituation = cadastralSituation;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }

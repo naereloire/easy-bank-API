@@ -31,6 +31,16 @@ public class TitularService {
         return titularRepository.findById(id);
     }
 
+    public TitularModel findTitularByEmailAndPassword(String email, String password) {
+        Optional<TitularModel> titularFounded = titularRepository.findByEmailAndPassword(email, password);
+        if (titularFounded.isPresent()) {
+            TitularModel wanted = titularFounded.get();
+            return wanted;
+        } else {
+            return null;
+        }
+    }
+
     public TitularModel findByCadastralType(Long cadastralType) {
         Optional<TitularModel> titularFounded = titularRepository.
                 findByCadastralType(cadastralType);
